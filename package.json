@@ -1,7 +1,7 @@
 {
     "name": "custom-pointer",
     "displayName": "Custom Pointer",
-    "description": "Custom Pointer",
+    "description": "Custom mouse pointer/cursor for Visual Studio Code",
     "version": "1.0.0",
     "publisher": "diegocurbelo",
     "author": {
@@ -9,6 +9,11 @@
       "name": "Diego Curbelo",
       "url": "https://diego.curbelo.com"
     },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/diegocurbelo/vscode-custom-pointer.git"
+    },
+    "license": "MIT",
     "engines": {
         "vscode": "^1.20.0"
     },
@@ -23,11 +28,11 @@
         "commands": [
             {
                 "command": "extension.activate",
-                "title": "Custom Pointer: Activate"
+                "title": "Custom Pointer: Enable"
             },
             {
                 "command": "extension.deactivate",
-                "title": "Custom Pointer: Deactivate"
+                "title": "Custom Pointer: Disable"
             }
         ]
     },
