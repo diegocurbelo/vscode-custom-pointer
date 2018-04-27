@@ -2,24 +2,21 @@
 
 This extension monkeypatches the VS Code styles to change the hand cursor to a normal pointer like every other editor.
 
-## Features
+If you're using Windows, Visual Studio Code **must** be running as an administrator in order for this extension to be able to modify the default styles.
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+## Install
 
-For example if there is an image subfolder under your extension project workspace:
+Follow the instructions in the [Marketplace](https://marketplace.visualstudio.com/items?itemName=diegocurbelo.custom-pointer), or run the following in the command palette:
 
-\!\[feature X\]\(images/feature-x.png\)
+```shell
+ext install diegocurbelo.custom-pointer
+```
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Usage
 
-## Extension Settings
+The extension will be enabled by default, and also add 2 new commands:
 
-This extension contributes the following settings:
-
-* `customPointer.enable`: enable/disable this extension
-
-## Release Notes
-
-### 1.0.0
-
-Initial release
+```js
+Custom Pointer: Enable
+Custom Pointer: Disable
+```

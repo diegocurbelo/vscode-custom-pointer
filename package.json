@@ -1,50 +1,51 @@
 {
-    "name": "custom-pointer",
-    "displayName": "Custom Pointer",
-    "description": "Custom mouse pointer/cursor for Visual Studio Code",
-    "version": "1.0.0",
-    "publisher": "diegocurbelo",
-    "author": {
-      "email": "diego@curbelo.com",
-      "name": "Diego Curbelo",
-      "url": "https://diego.curbelo.com"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/diegocurbelo/vscode-custom-pointer.git"
-    },
-    "license": "MIT",
-    "engines": {
-        "vscode": "^1.20.0"
-    },
-    "categories": [
-        "Other"
-    ],
-    "activationEvents": [
-        "*"
-    ],
-    "main": "./extension",
-    "contributes": {
-        "commands": [
-            {
-                "command": "extension.activate",
-                "title": "Custom Pointer: Enable"
-            },
-            {
-                "command": "extension.deactivate",
-                "title": "Custom Pointer: Disable"
-            }
-        ]
-    },
-    "scripts": {
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "node ./node_modules/vscode/bin/test"
-    },
-    "devDependencies": {
-        "typescript": "^2.6.1",
-        "vscode": "^1.1.6",
-        "eslint": "^4.11.0",
-        "@types/node": "^7.0.43",
-        "@types/mocha": "^2.2.42"
-    }
+  "name": "custom-pointer",
+  "displayName": "Custom Pointer",
+  "description": "Custom mouse pointer/cursor for Visual Studio Code",
+  "icon": "logo.png",
+  "version": "1.1.0",
+  "publisher": "diegocurbelo",
+  "author": {
+    "email": "diego@curbelo.com",
+    "name": "Diego Curbelo",
+    "url": "https://diego.curbelo.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/diegocurbelo/vscode-custom-pointer.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.20.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./src/extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "customPointer.enable",
+        "title": "Custom Pointer: Enable"
+      },
+      {
+        "command": "customPointer.disable",
+        "title": "Custom Pointer: Disable"
+      }
+    ]
+  },
+  "scripts": {
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "typescript": "^2.6.1",
+    "vscode": "^1.1.6",
+    "eslint": "^4.11.0",
+    "@types/node": "^7.0.43",
+    "@types/mocha": "^2.2.42"
+  }
 }
