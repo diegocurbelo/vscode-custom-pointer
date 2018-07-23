@@ -9,4 +9,6 @@
 
 ## 1.1.1
 - Updated selectors for changes in TabBar classes
+
+## 1.2.0
 - Added custom message when the extension is updated
