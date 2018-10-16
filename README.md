@@ -19,4 +19,5 @@ The extension will be enabled by default, and also add 2 new commands:
 ```js
 Custom Pointer: Enable
 Custom Pointer: Disable
+Custom Pointer: Remove
 ```

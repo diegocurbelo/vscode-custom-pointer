@@ -12,3 +12,7 @@
 
 ## 1.2.0
 - Added custom message when the extension is updated
+
+## 1.2.1
+- Add support for version 1.28
+- Changed cursor for the debug config selector

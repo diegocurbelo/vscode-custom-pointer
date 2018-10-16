@@ -3,13 +3,16 @@ const path = require('path')
 const fs = require('fs')
 
 const baseDir = path.dirname(require.main.filename)
-const indexFile  = path.join(baseDir, 'vs', 'workbench', 'electron-browser', 'bootstrap', 'index.html')
+// const indexFile  = path.join(baseDir, 'vs', 'workbench', 'electron-browser', 'bootstrap', 'index.html')
 const mainFile = path.join(baseDir, 'vs', 'workbench', 'workbench.main.js')
+const indexFile  = path.join(baseDir, 'vs', 'code', 'electron-browser', 'workbench', 'workbench.html')
+// const mainFile = path.join(baseDir, 'vs', 'code', 'electron-browser', 'workbench', 'workbench.js')
 
 const selectors = [
   // Sidebar
   // - Action bar
   ".monaco-action-bar .action-item",
+  ".monaco-action-bar .start-debug-action-item .configuration .monaco-select-box",
   // - File explorer
   ".monaco-tree .monaco-tree-rows>.monaco-tree-row",
   // - Left panel headers (outline, variables, etc)

@@ -21,6 +21,9 @@ function activate(context) {
   context.subscriptions.push(
     vscode.commands.registerCommand('customPointer.disable', function() { commands.disable() })
   )
+  context.subscriptions.push(
+    vscode.commands.registerCommand('customPointer.remove', function() { commands.remove() })
+  )
 
   const version = readInstalledVersion()
 
@@ -45,7 +48,7 @@ exports.deactivate = deactivate;
 
 function readInstalledVersion() {
   const baseDir = path.dirname(require.main.filename)
-  const indexFile  = path.join(baseDir, 'vs', 'workbench', 'electron-browser', 'bootstrap', 'index.html')
+  const indexFile  = path.join(baseDir, 'vs', 'code', 'electron-browser', 'workbench', 'workbench.html')
   var html = fs.readFileSync(indexFile, 'utf-8')
 
   const match = html.match(/<!-- CUSTOM-POINTER_BEGIN \[(.*?)\] -->/)
