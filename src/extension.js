@@ -1,60 +1,54 @@
 const vscode = require('vscode')
-const path = require('path')
-const fs = require('fs')
-const commands = require('./commands')
+const { enable, update, disable } = require('./commands')
+const { getActiveVersion, getExtensionVersion } = require('./utils')
 
-// If and exception is thrown, ask for Visual Studio Core to be run with admin privileges
-process.on('uncaughtException', err => {
-  if (!/ENOENT|EACCES|EPERM/.test(err.code)) {
-    console.log('[Custom Pointer] >', 'uncaughtException')
-    return
-  }
-  vscode.window.showInformationMessage('Run Visual Studio Code with admin privileges so the changes can be applied')
-})
+// Define a handler for any uncaught exception
+process.on('uncaughtException', handleUncaughtException)
 
-// this method is called when your extension is activated
+/**
+ * @param {vscode.ExtensionContext} context
+ */
 function activate(context) {
-  // Register ENABLE and DISABLE commmands
-  context.subscriptions.push(
-    vscode.commands.registerCommand('customPointer.enable', function() { commands.enable() })
-  )
-  context.subscriptions.push(
-    vscode.commands.registerCommand('customPointer.disable', function() { commands.disable() })
-  )
-  context.subscriptions.push(
-    vscode.commands.registerCommand('customPointer.remove', function() { commands.remove() })
-  )
+	const status = context.globalState.get('extension.custom_pointer', '')
+	
+	console.log(':: Extension is ' + status)
+	
+	if (status === '') {
+		// First time the extension is activated
+		enable(context)
+	
+	} else if (status === 'enabled' && getActiveVersion() !== getExtensionVersion()) {
+		// The extension has been updated
+		update(context)
+	}
 
-  const version = readInstalledVersion()
-
-  if (version) {
-    if (version !== 'disabled' && version !== getVersion()) {
-      commands.update()
-    }
-
-  } else {
-    commands.enable()
-  }
+	context.subscriptions.push(vscode.commands.registerCommand('extension.custom_pointer.enable', function() { enable(context) }))
+	context.subscriptions.push(vscode.commands.registerCommand('extension.custom_pointer.disable', function() { disable(context) }))
 }
 
-// this method is called when your extension is deactivated
+function onDidChange(event) {
+	console.log(':: > onDidChange')
+	console.log(event);
+}
+
 function deactivate() {
+	console.log(':: > deactivate')
 }
 
-exports.activate = activate;
-exports.deactivate = deactivate;
+module.exports = {
+	activate,
+	deactivate,
+	onDidChange
+}
 
 // --
 
-function readInstalledVersion() {
-  const baseDir = path.dirname(require.main.filename)
-  const indexFile  = path.join(baseDir, 'vs', 'code', 'electron-browser', 'workbench', 'workbench.html')
-  var html = fs.readFileSync(indexFile, 'utf-8')
-
-  const match = html.match(/<!-- CUSTOM-POINTER_BEGIN \[(.*?)\] -->/)
-  return match ? match[1] : null
-}
-
-function getVersion() {
-  return vscode.extensions.getExtension('diegocurbelo.custom-pointer').packageJSON.version
+function handleUncaughtException(err) {
+	console.log(`:: ${err}`)
+	if (!/ENOENT|EACCES|EPERM/.test(err.code)) {
+		console.log('[Custom Pointer] >', 'uncaughtException')
+		return
+	}
+	// If and exception is thrown, ask for Visual Studio Core to be run with admin privileges
+	vscode.window.showInformationMessage('Run Visual Studio Code with admin privileges so the changes can be applied')
 }

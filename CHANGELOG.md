@@ -8,11 +8,18 @@
 - Remove the [unsupported] from the App title
 
 ## 1.1.1
-- Updated selectors for changes in TabBar classes
+- Update selectors for changes in TabBar classes
 
 ## 1.2.0
 - Added custom message when the extension is updated
 
 ## 1.2.1
-- Add support for version 1.28
+- Update selectors for version 1.28
 - Changed cursor for the debug config selector
+
+## 1.3.0
+- Update selectors for version 1.31
+- Changed activation/deactivation conditions
+
+## 1.3.1
+- Update selectors for version 1.43

@@ -1,55 +1,56 @@
 {
-  "name": "custom-pointer",
-  "displayName": "Custom Pointer",
-  "description": "Custom mouse pointer/cursor for Visual Studio Code",
-  "icon": "logo.png",
-  "version": "1.2.1",
-  "publisher": "diegocurbelo",
-  "author": {
-    "email": "diego@curbelo.com",
-    "name": "Diego Curbelo",
-    "url": "https://diego.curbelo.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/diegocurbelo/vscode-custom-pointer.git"
-  },
-  "license": "MIT",
-  "engines": {
-    "vscode": "^1.28.1"
-  },
-  "categories": [
-    "Other"
-  ],
-  "activationEvents": [
-    "*"
-  ],
-  "main": "./src/extension",
-  "contributes": {
-    "commands": [
-      {
-        "command": "customPointer.enable",
-        "title": "Custom Pointer: Enable"
-      },
-      {
-        "command": "customPointer.disable",
-        "title": "Custom Pointer: Disable"
-      },
-      {
-        "command": "customPointer.remove",
-        "title": "Custom Pointer: Remove"
-      }
-    ]
-  },
-  "scripts": {
-    "postinstall": "node ./node_modules/vscode/bin/install",
-    "test": "node ./node_modules/vscode/bin/test"
-  },
-  "devDependencies": {
-    "@types/mocha": "^5.2.5",
-    "@types/node": "^10.12.0",
-    "eslint": "^5.7.0",
-    "typescript": "^3.1.3",
-    "vscode": "^1.1.6"
-  }
+	"name": "custom-pointer",
+	"displayName": "Custom Pointer",
+	"description": "Custom mouse pointer/cursor for Visual Studio Code",
+	"icon": "logo.png",
+	"version": "1.3.1",
+	"publisher": "diegocurbelo",
+	"author": {
+		"email": "diego@curbelo.com",
+		"name": "Diego Curbelo",
+		"url": "https://diego.curbelo.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/diegocurbelo/vscode-custom-pointer.git"
+	},
+	"license": "MIT",
+	"engines": {
+		"vscode": "^1.43.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./src/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.custom_pointer.enable",
+				"title": "Custom Pointer: Enable"
+			},
+			{
+				"command": "extension.custom_pointer.disable",
+				"title": "Custom Pointer: Disable"
+			}
+		]
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "npm run lint",
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^7.0.1",
+		"@types/node": "^13.9.0",
+		"@types/vscode": "^1.43.0",
+		"eslint": "^6.8.0",
+		"glob": "^7.1.6",
+		"mocha": "^7.0.1",
+		"typescript": "^3.7.5",
+		"vscode-test": "^1.3.0"
+	}
 }
