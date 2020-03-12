@@ -10,9 +10,6 @@ process.on('uncaughtException', handleUncaughtException)
  */
 function activate(context) {
 	const status = context.globalState.get('extension.custom_pointer', '')
-	
-	console.log(':: Extension is ' + status)
-	
 	if (status === '') {
 		// First time the extension is activated
 		enable(context)

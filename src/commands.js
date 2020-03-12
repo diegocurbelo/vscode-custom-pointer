@@ -1,4 +1,3 @@
-const vscode = require('vscode')
 const fs = require('fs')
 const { askToRestart, getExtensionVersion } = require('./utils')
 const {
@@ -50,10 +49,7 @@ const patchFiles = () => {
 	fs.writeFileSync(WORKBENCH_INDEX_FILE, content, 'utf-8')
 
 	content = fs.readFileSync(WORKBENCH_MAIN_JS_FILE, 'utf-8')
-	content = content.replace(
-		",this.properties.isPure||(t=`${t||this.productService.nameLong} ${e.NLS_UNSUPPORTED}`),",
-		",this.properties.isPure||(t=`${t||this.productService.nameLong}`),"
-	)
+	content = content.replace("this.properties.isPure=i", "this.properties.isPure=1")
 	fs.writeFileSync(WORKBENCH_MAIN_JS_FILE, content, 'utf-8')
 }
 
@@ -63,9 +59,6 @@ const restoreFiles = () => {
 	fs.writeFileSync(WORKBENCH_INDEX_FILE, content, 'utf-8')
 
 	content = fs.readFileSync(WORKBENCH_MAIN_JS_FILE, 'utf-8')
-	content = content.replace(
-		",this.properties.isPure||(t=`${t||this.productService.nameLong}`),",
-		",this.properties.isPure||(t=`${t||this.productService.nameLong} ${e.NLS_UNSUPPORTED}`),"
-	)
+	content = content.replace("this.properties.isPure=1", "this.properties.isPure=i")
 	fs.writeFileSync(WORKBENCH_MAIN_JS_FILE, content, 'utf-8')
 }

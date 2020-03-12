@@ -5,7 +5,6 @@
 
 ## 1.1.0
 - Change the cursor for the buttons inside the sidebar (add folder)
-- Remove the [unsupported] from the App title
 
 ## 1.1.1
 - Update selectors for changes in TabBar classes
@@ -23,3 +22,6 @@
 
 ## 1.3.1
 - Update selectors for version 1.43
+
+## 1.3.2
+- Hide the [Unsupported] message from the App title
