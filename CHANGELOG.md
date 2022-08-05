@@ -25,3 +25,7 @@
 
 ## 1.3.2
 - Hide the [Unsupported] message from the App title
+
+## 1.4.0
+- Added compatibility with 1.70.0
+- Updated readme
