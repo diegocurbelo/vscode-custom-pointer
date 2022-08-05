@@ -1,9 +1,7 @@
-const path = require('path')
+const path = require( 'path' )
 
-const BASE_DIR = path.dirname(require.main.filename)
-
-const WORKBENCH_INDEX_FILE  = path.join(BASE_DIR, 'vs', 'code', 'electron-browser', 'workbench', 'workbench.html')
-const WORKBENCH_MAIN_JS_FILE = path.join(BASE_DIR, 'vs', 'workbench', 'workbench.desktop.main.js')
+const BASE_DIR = path.dirname( require.main.filename )
+const WORKBENCH_MAIN_CSS_FILE = path.join( BASE_DIR, 'vs', 'workbench', 'workbench.desktop.main.css' )
 
 const CSS_SELECTORS = [
 	// General
@@ -24,10 +22,10 @@ const CSS_SELECTORS = [
 	".monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab",
 	".monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab .tab-label a",
 	".monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab .tab-close a",
-	
+
 	// Breadcrumbs
 	".monaco-breadcrumbs .monaco-breadcrumb-item",
-	
+
 	// Margin view
 	".monaco-editor .margin-view-overlays .cgmr",
 	".monaco-editor .margin-view-overlays .codicon-chevron-down",
@@ -43,6 +41,5 @@ const CSS_SELECTORS = [
 
 module.exports = {
     CSS_SELECTORS,
-    WORKBENCH_INDEX_FILE,
-    WORKBENCH_MAIN_JS_FILE,
+    WORKBENCH_MAIN_CSS_FILE,
 }
