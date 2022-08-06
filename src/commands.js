@@ -36,7 +36,7 @@ module.exports = {
 const patchFiles = () => {
 	const version = getExtensionVersion()
 	let content = fs.readFileSync(WORKBENCH_MAIN_CSS_FILE, 'utf-8')
-	content = content.replace(/\/\*CUSTOM-POINTER_BEGIN .*? CUSTOM-POINTER_END\*\//, '')
+	content = content.replace(/\/\*CUSTOM-POINTER_BEGIN .*? \/\*CUSTOM-POINTER_END\*\//, '')
 	content += `/*CUSTOM-POINTER_BEGIN [${version}]*/ ${CSS_SELECTORS.join(',')}{cursor:default !important;} /*CUSTOM-POINTER_END*/`
 	fs.writeFileSync(WORKBENCH_MAIN_CSS_FILE, content, 'utf-8')
 }
