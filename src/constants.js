@@ -19,9 +19,11 @@ const CSS_SELECTORS = [
 	".monaco-editor .find-widget .button",
 
 	// Editor - Tab bar
+	".monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container",
 	".monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab",
 	".monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab .tab-label a",
 	".monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab .tab-close a",
+	".monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab span",
 
 	// Breadcrumbs
 	".monaco-breadcrumbs .monaco-breadcrumb-item",
