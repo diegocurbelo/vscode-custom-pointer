@@ -23,7 +23,7 @@ const CSS_SELECTORS = [
 	".monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab",
 	".monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab .tab-label a",
 	".monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab .tab-close a",
-	".monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab .label-description",
+	".monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab span",
 
 	// Breadcrumbs
 	".monaco-breadcrumbs .monaco-breadcrumb-item",
