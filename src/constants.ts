@@ -1,9 +1,11 @@
-const path = require( 'path' )
+import * as vscode from 'vscode';
+import { join } from 'path';
 
-const BASE_DIR = path.dirname( require.main.filename )
-const WORKBENCH_MAIN_CSS_FILE = path.join( BASE_DIR, 'vs', 'workbench', 'workbench.desktop.main.css' )
+export const EXTENSION_VERSION: string = vscode.extensions.getExtension( 'diegocurbelo.custom-pointer' )!.packageJSON.version;
 
-const CSS_SELECTORS = [
+export const WORKBENCH_MAIN_CSS_FILE = join( vscode.env.appRoot, 'out/vs/workbench', 'workbench.desktop.main.css' );
+
+export const CSS_SELECTORS = [
 	// General
 	".monaco-text-button",
 	".monaco-dropdown>.dropdown-label",
@@ -19,9 +21,11 @@ const CSS_SELECTORS = [
 	".monaco-editor .find-widget .button",
 
 	// Editor - Tab bar
+	".monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container",
 	".monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab",
 	".monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab .tab-label a",
 	".monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab .tab-close a",
+	".monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab span",
 
 	// Breadcrumbs
 	".monaco-breadcrumbs .monaco-breadcrumb-item",
@@ -38,8 +42,3 @@ const CSS_SELECTORS = [
 	// Status bar
 	".monaco-workbench .part.statusbar>.items-container>.statusbar-item>a",
 ]
-
-module.exports = {
-    CSS_SELECTORS,
-    WORKBENCH_MAIN_CSS_FILE,
-}

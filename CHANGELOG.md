@@ -29,3 +29,7 @@
 ## 1.4.0
 - Added compatibility with 1.70.0
 - Updated readme
+
+## 1.5.0
+- Added compatibility with 1.99.3
+- Added compatibility with Cursor 1.2.4
