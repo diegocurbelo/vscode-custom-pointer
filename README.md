@@ -1,7 +1,7 @@
 # Custom Pointer
 
-[![Badge](https://vsmarketplacebadge.apphb.com/version-short/diegocurbelo.custom-pointer.svg?color=blue&style=?style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=diegocurbelo.custom-pointer)
-[![Installs](https://vsmarketplacebadge.apphb.com/installs-short/diegocurbelo.custom-pointer.svg?color=blue&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=diegocurbelo.custom-pointer)
+[![Badge](https://vsmarketplacebadges.dev/version-short/diegocurbelo.custom-pointer.svg?color=blue&style=?style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=diegocurbelo.custom-pointer)
+[![Installs](https://vsmarketplacebadges.dev/installs-short/diegocurbelo.custom-pointer.svg?color=blue&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=diegocurbelo.custom-pointer)
 [![License](https://img.shields.io/badge/license-MIT-orange.svg?color=blue&style=flat-square)](http://opensource.org/licenses/MIT)
 
 This extension updates the VS Code styles to change the hand cursor to a normal pointer.
